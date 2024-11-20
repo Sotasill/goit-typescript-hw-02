@@ -11,7 +11,7 @@ interface ImageCardProps {
 
 function ImageCard({ urls: { small, regular }, altDescription, onModalOpen }: ImageCardProps) {
   return (
-    <li className={css.imageItem}>
+    <div className={css.imageCard}>
       <div className={css.imageWrapper}>
         <img
           src={small}
@@ -20,7 +20,7 @@ function ImageCard({ urls: { small, regular }, altDescription, onModalOpen }: Im
           onClick={() => onModalOpen(regular, altDescription)}
         />
       </div>
-    </li>
+    </div>
   );
 }
 
