@@ -1,0 +1,80 @@
+.image {
+  display: block;
+  width: 100%;
+  max-height: 95dvh;
+  object-fit: cover;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
+}
+
+.backdropOpen {
+  opacity: 1;
+}
+
+.backdropClose {
+  opacity: 0;
+}
+
+.modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  overflow: auto;
+  border-radius: 4px;
+  overflow: hidden;
+  outline: none;
+}
+
+.info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+  color: white;
+  flex-wrap: nowrap;
+  padding: 20px;
+  background-color: black;
+}
+
+.info h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.info p {
+  font-size: 16px;
+  color: white;
+}
+
+.closeButton {
+ padding: 20px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background-color: #4285F4;
+  cursor: pointer;
+  color: white;
+  
+  font-size: 20px;
+  
+
+  padding: 15px 40px;
+  border-radius: 4px;
+}
+
+
+
+.close:hover {background-color: #062f70 ;}

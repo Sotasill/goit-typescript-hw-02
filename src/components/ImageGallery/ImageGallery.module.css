@@ -1,0 +1,28 @@
+.wrapper {
+    max-width: 100%;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 40px;
+  }
+
+.galleryList {display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);   
+  gap: 20px; 
+padding: 20px; 
+justify-content: center;
+align-items: center;
+}
+
+.galleryItem {
+    list-style: none;
+    object-fit: cover;
+    transition: box-shadow, cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    border-radius: 8px;
+    
+ }
+
+ .galleryItem:hover {
+   box-shadow: 1px 10px 19px 0px rgba(0,0,0,0.75);
+ }
+
