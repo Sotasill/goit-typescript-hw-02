@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "ES2015",
     "useDefineForClassFields": true,
-    "lib": ["ES2015", "DOM"],
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ESNext"
+    ],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
