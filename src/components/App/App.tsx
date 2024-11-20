@@ -9,18 +9,17 @@ import ImageModal from "../ImageModal/ImageModal";
 import LoadMoreBtn from "../LoadMoreBtn/LoadMoreBtn";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import { BiSolidNoEntry } from "react-icons/bi";
-
-interface Image {
-  id: string;
-  urls: {
-    regular: string;
-    small?: string;
-  };
-  alt_description: string;
-}
+import { Image } from '../../types/types';
 
 interface ApiResponse {
-  results: Image[];
+  results: {
+    id: string;
+    urls: {
+      regular: string;
+      small?: string;
+    };
+    alt_description?: string;
+  }[];
   total: number;
   total_pages: number;
 }
@@ -80,7 +79,21 @@ const App: React.FC = () => {
         }
 
         setIsLastPage(page >= data.total_pages);
-        setImages((prevData) => [...prevData, ...results]);
+        const mappedResults = results.map(result => ({
+          id: result.id,
+          urls: result.urls,
+          alt_description: result.alt_description || ''
+        }));
+        setImages((prevData) => [
+          ...prevData,
+          ...mappedResults.map(result => ({
+            ...result,
+            urls: {
+              ...result.urls,
+              small: result.urls.small || ''
+            }
+          }))
+        ]);
       } catch (error) {
         setError(true);
         setErrorMessage((error as Error).message);
